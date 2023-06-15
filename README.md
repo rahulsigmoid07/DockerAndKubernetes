@@ -50,7 +50,7 @@ kubectl apply -f postgres-deployment.yaml
 ```
 4. The postgres container has airflow installed in it. But it was not initialised as the database for airflow. I tried to do it automatically by writing commands in yaml file, but some error always popped up. So, I entered the postgres docker container using,
 ``` bash
-kubectl exec -it your-pod-name -- /bin/bashThen ran the following command to initialise the database and make a user.bash
+kubectl exec -it your-pod-name -- /bin/bash #Then ran the following command to initialise the database and make a user.bash
 export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://airflow:airflow@localhost:5432/airflow
 
 airflow db init
