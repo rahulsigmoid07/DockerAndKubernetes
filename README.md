@@ -55,7 +55,7 @@ export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql://airflow:airflow@localhost:54
 
 airflow db init
 
-airflow users create -u airflow -p airflow -f ashish -l chouhan -e abc@gmail.com -r Admin
+airflow users create -u airflow -p airflow -f rahul -l kumar -e xyz@gmail.com -r Admin
 ```
 5. Then created a service of type clusterIP by running ```postgres-service.yaml``` to give access to postgres pods inside the cluster. The following command was used.
 ``` bash
