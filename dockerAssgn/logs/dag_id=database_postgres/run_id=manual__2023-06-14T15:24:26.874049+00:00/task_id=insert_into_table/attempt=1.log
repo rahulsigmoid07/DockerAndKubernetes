@@ -1,0 +1,42 @@
+[2023-06-14T15:24:28.514+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:24:26.874049+00:00 [queued]>
+[2023-06-14T15:24:28.519+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:24:26.874049+00:00 [queued]>
+[2023-06-14T15:24:28.520+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T15:24:28.520+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-06-14T15:24:28.520+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T15:24:28.527+0000] {taskinstance.py:1300} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2023-06-14 15:24:26.874049+00:00
+[2023-06-14T15:24:28.532+0000] {standard_task_runner.py:55} INFO - Started process 128 to run task
+[2023-06-14T15:24:28.535+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'database_postgres', 'insert_into_table', 'manual__2023-06-14T15:24:26.874049+00:00', '--job-id', '58', '--raw', '--subdir', 'DAGS_FOLDER/postgress_db.py', '--cfg-path', '/tmp/tmpl6f_aa85']
+[2023-06-14T15:24:28.535+0000] {standard_task_runner.py:83} INFO - Job 58: Subtask insert_into_table
+[2023-06-14T15:24:28.582+0000] {task_command.py:388} INFO - Running <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:24:26.874049+00:00 [running]> on host 3de891eadda2
+[2023-06-14T15:24:28.626+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=database_postgres
+AIRFLOW_CTX_TASK_ID=insert_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-14T15:24:26.874049+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-14T15:24:26.874049+00:00
+[2023-06-14T15:24:28.627+0000] {sql.py:254} INFO - Executing: INSERT INTO execution_table (exectime) VALUES (1,CURRENT_TIMESTAMP);
+[2023-06-14T15:24:28.634+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T15:24:28.732+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T15:24:28.736+0000] {sql.py:375} INFO - Running statement: INSERT INTO execution_table (exectime) VALUES (1,CURRENT_TIMESTAMP);, parameters: None
+[2023-06-14T15:24:28.738+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 266, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: INSERT has more expressions than target columns
+LINE 1: INSERT INTO execution_table (exectime) VALUES (1,CURRENT_TIM...
+                                                         ^
+
+[2023-06-14T15:24:28.745+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=database_postgres, task_id=insert_into_table, execution_date=20230614T152426, start_date=20230614T152428, end_date=20230614T152428
+[2023-06-14T15:24:28.752+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 58 for task insert_into_table (INSERT has more expressions than target columns
+LINE 1: INSERT INTO execution_table (exectime) VALUES (1,CURRENT_TIM...
+                                                         ^
+; 128)
+[2023-06-14T15:24:28.788+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-06-14T15:24:28.801+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

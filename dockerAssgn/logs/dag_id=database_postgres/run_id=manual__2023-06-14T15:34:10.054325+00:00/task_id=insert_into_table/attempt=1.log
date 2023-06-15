@@ -1,0 +1,27 @@
+[2023-06-14T15:34:12.602+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:34:10.054325+00:00 [queued]>
+[2023-06-14T15:34:12.607+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:34:10.054325+00:00 [queued]>
+[2023-06-14T15:34:12.607+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T15:34:12.608+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-06-14T15:34:12.608+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T15:34:12.615+0000] {taskinstance.py:1300} INFO - Executing <Task(PostgresOperator): insert_into_table> on 2023-06-14 15:34:10.054325+00:00
+[2023-06-14T15:34:12.621+0000] {standard_task_runner.py:55} INFO - Started process 244 to run task
+[2023-06-14T15:34:12.625+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'database_postgres', 'insert_into_table', 'manual__2023-06-14T15:34:10.054325+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/postgress_db.py', '--cfg-path', '/tmp/tmp691au2_8']
+[2023-06-14T15:34:12.626+0000] {standard_task_runner.py:83} INFO - Job 68: Subtask insert_into_table
+[2023-06-14T15:34:12.684+0000] {task_command.py:388} INFO - Running <TaskInstance: database_postgres.insert_into_table manual__2023-06-14T15:34:10.054325+00:00 [running]> on host 9268ba351b9c
+[2023-06-14T15:34:12.731+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=database_postgres
+AIRFLOW_CTX_TASK_ID=insert_into_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-14T15:34:10.054325+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-14T15:34:10.054325+00:00
+[2023-06-14T15:34:12.732+0000] {sql.py:254} INFO - Executing: INSERT INTO execution_table (exectime) VALUES (CURRENT_TIMESTAMP);
+[2023-06-14T15:34:12.739+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T15:34:12.838+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T15:34:12.843+0000] {sql.py:375} INFO - Running statement: INSERT INTO execution_table (exectime) VALUES (CURRENT_TIMESTAMP);, parameters: None
+[2023-06-14T15:34:12.844+0000] {sql.py:384} INFO - Rows affected: 1
+[2023-06-14T15:34:12.853+0000] {taskinstance.py:1323} INFO - Marking task as SUCCESS. dag_id=database_postgres, task_id=insert_into_table, execution_date=20230614T153410, start_date=20230614T153412, end_date=20230614T153412
+[2023-06-14T15:34:12.879+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2023-06-14T15:34:12.892+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check

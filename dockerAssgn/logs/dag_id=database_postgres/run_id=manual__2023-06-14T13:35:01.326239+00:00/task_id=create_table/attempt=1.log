@@ -1,0 +1,48 @@
+[2023-06-14T13:35:02.343+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.create_table manual__2023-06-14T13:35:01.326239+00:00 [queued]>
+[2023-06-14T13:35:02.348+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: database_postgres.create_table manual__2023-06-14T13:35:01.326239+00:00 [queued]>
+[2023-06-14T13:35:02.349+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T13:35:02.349+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 1
+[2023-06-14T13:35:02.350+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-14T13:35:02.357+0000] {taskinstance.py:1300} INFO - Executing <Task(PostgresOperator): create_table> on 2023-06-14 13:35:01.326239+00:00
+[2023-06-14T13:35:02.361+0000] {standard_task_runner.py:55} INFO - Started process 729 to run task
+[2023-06-14T13:35:02.365+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'database_postgres', 'create_table', 'manual__2023-06-14T13:35:01.326239+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/postgress_db.py', '--cfg-path', '/tmp/tmpm3co8ffz']
+[2023-06-14T13:35:02.366+0000] {standard_task_runner.py:83} INFO - Job 23: Subtask create_table
+[2023-06-14T13:35:02.413+0000] {task_command.py:388} INFO - Running <TaskInstance: database_postgres.create_table manual__2023-06-14T13:35:01.326239+00:00 [running]> on host 649eec7cdf92
+[2023-06-14T13:35:02.468+0000] {taskinstance.py:1509} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=database_postgres
+AIRFLOW_CTX_TASK_ID=create_table
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-14T13:35:01.326239+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-14T13:35:01.326239+00:00
+[2023-06-14T13:35:02.470+0000] {sql.py:254} INFO - Executing: CREATE TABLE IF NOT EXISTS my_table (
+  id INT NOT NULL AUTO_INCREMENT,
+  "current_time" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+[2023-06-14T13:35:02.478+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T13:35:02.580+0000] {base.py:73} INFO - Using connection ID 'postgres' for task execution.
+[2023-06-14T13:35:02.585+0000] {sql.py:375} INFO - Running statement: CREATE TABLE IF NOT EXISTS my_table (
+  id INT NOT NULL AUTO_INCREMENT,
+  "current_time" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);, parameters: None
+[2023-06-14T13:35:02.586+0000] {taskinstance.py:1768} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 266, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near "AUTO_INCREMENT"
+LINE 2:   id INT NOT NULL AUTO_INCREMENT,
+                          ^
+
+[2023-06-14T13:35:02.594+0000] {taskinstance.py:1323} INFO - Marking task as FAILED. dag_id=database_postgres, task_id=create_table, execution_date=20230614T133501, start_date=20230614T133502, end_date=20230614T133502
+[2023-06-14T13:35:02.601+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 23 for task create_table (syntax error at or near "AUTO_INCREMENT"
+LINE 2:   id INT NOT NULL AUTO_INCREMENT,
+                          ^
+; 729)
+[2023-06-14T13:35:02.618+0000] {local_task_job.py:208} INFO - Task exited with return code 1
+[2023-06-14T13:35:02.637+0000] {taskinstance.py:2578} INFO - 0 downstream tasks scheduled from follow-on schedule check
