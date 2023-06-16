@@ -5,10 +5,11 @@
 * ##### Made docker compose file for airflow containers and postgres database 
 2. The DAG ran successfully.
 
-<img width="825" alt="Screenshot 2023-06-15 at 3 27 56 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/e282d094-3c73-4ef6-8504-db6693b3aadd">
+<img width="853" alt="Screenshot 2023-06-15 at 5 17 30 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/27104b49-e2fa-4828-84a6-e572b0dc15f5">
 
 3. Verified the result by viewing the table.
-<img width="327" alt="Screenshot 2023-06-15 at 5 02 30 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/4d2d6008-fe91-403c-b92d-a90664858852">
+<img width="327" alt="Screenshot 2023-06-15 at 5 02 30 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/a4aa5967-f7ce-4f36-8556-670d544fda25">
+
 
 3. To get the above results, follow the below steps:
 * Download the folder ```DockerAndKubernetes``` Change directory to get inside this folder.
@@ -77,8 +78,9 @@ vim postgress_db.py #Made this file and copied my code inside it
 kubectl apply -f airflow-service.yaml
 ```
 8. Accessed the airflow webserver by running the command ```minikube service airflow ```. Upon logging in, the dag was visible and it ran successfully.
-<img width="853" alt="Screenshot 2023-06-15 at 5 17 30 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/975d311f-57d7-4999-b7c2-4cd22c7fd122">
+<img width="853" alt="Screenshot 2023-06-15 at 5 17 30 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/27104b49-e2fa-4828-84a6-e572b0dc15f5">
 
 9. Verified this by logging into the postgres container and viewing the table.
-<img width="466" alt="Screenshot 2023-06-15 at 5 28 14 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/48006b87-2aa3-4bed-b006-38fabaa50e4f">
+<img width="466" alt="Screenshot 2023-06-15 at 5 28 14 PM" src="https://github.com/rahulsigmoid07/DockerAndKubernetes/assets/123542137/6ad8876d-9040-4dcb-a819-debf8f9f2eeb">
+
 
